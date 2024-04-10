@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java", // 言語を指定
+        "name": "java (Attach)", // デバッグ実行名
+        "request": "attach", // 起動中のプログラムにアタッチ
+        "hostName": "localhost",
+        "port": 5050 // 接続するポートを指定
+      }
+    ]
+  }
