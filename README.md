@@ -4,15 +4,20 @@
 --------------------------
 
  １、VSCodeを開く
+ 
  ２、サイドバーの拡張機能アイコンをクリック
+ 
  ３、下記の２つを検索してインストール
 
+
 ・Extension Pack for Java
+
 ・Spring Boot Extension Pack
 
 2、GitHubリポジトリからソースをクローンする
 --------------------------
 下記がソースのURLになります。
+
 git clone https://github.com/KaoruSato3101/spring-application.git
 
 ３、コンテナ上でビルドを実行
@@ -69,7 +74,9 @@ VSCodeのデバッグビューを開いて、サイドバーの［実行とデ�
 この状態で▶️（開始ボタン）を押すことで、デバッグモードが起動されます。
 
 うまく起動したら、下記のURLにアクセスしてください。
+
 http://localhost:8080/
+
 
 下記画像のように「Whitelabel Error Page」が表示されていれば、環境構築完了です。
 ![スクリーンショット 2024-04-22 23.13.29.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3744277/29986c70-eaf3-31b1-6b4d-6ae98390f38f.png)
