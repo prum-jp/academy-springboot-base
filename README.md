@@ -18,7 +18,7 @@
 --------------------------
 下記がソースのURLになります。
 
-git clone https://github.com/KaoruSato3101/spring-application.git
+git clone https://github.com/prum-jp/academy-springboot-base.git
 
 ３、コンテナ上でビルドを実行
 --------------------------
