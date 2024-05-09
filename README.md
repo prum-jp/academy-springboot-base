@@ -36,6 +36,7 @@ docker-compose up -d
 docker compose exec app bash
 ```
 ※ターミナルに以下のような文字列が表示されれば成功です。
+
 `root@569495f96ff8:/app#`
 
 ３、ビルドを実行する
