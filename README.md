@@ -4,9 +4,9 @@
 --------------------------
 
  １、VSCodeを開く
- 
+
  ２、サイドバーの拡張機能アイコンをクリック
- 
+
  ３、下記の２つを検索してインストール
 
 
@@ -16,50 +16,43 @@
 
 2、GitHubリポジトリからソースをクローンする
 --------------------------
-下記がソースのURLになります。
+１、ソースコードを保存したいディレクトリをvscodeで開きます。
 
+２、下記コマンドをvscodeのターミナルで実行し、自身のPCにインストールします。
+```
 git clone https://github.com/KaoruSato3101/spring-application.git
+```
 
 ３、コンテナ上でビルドを実行
 --------------------------
 
-１、まずはクローンしたフォルダに対して、ターミナル上で以下のコマンドを叩き、Javaコンテナを起動します。
+１、クローンしたフォルダをvscodeで開き、ターミナルで以下のコマンドを叩き、Javaコンテナを起動します。
 ```
-% docker-compose up -d
-[+] Building 0.0s (0/0)                                                                                                                                        docker:desktop-linux
-[+] Running 3/3
- ✔ Network springboot-application_default  Created
- ✔ Container db                            Started　
- ✔ Container springboot-application-app-1  Started   
+docker-compose up -d
 ```
 
 ２、コンテナを作成・起動したら、javaコンテナ内に入ります。
 ```
-% docker compose exec app bash             
-root@569495f96ff8:/app# 
+docker compose exec app bash
 ```
+※ターミナルに以下のような文字列が表示されれば成功です。
+`root@569495f96ff8:/app#`
+
 ３、ビルドを実行する
 ```
-root@569495f96ff8:/app# ./gradlew build --continuous
-
-BUILD SUCCESSFUL in 42s
-6 actionable tasks: 3 executed, 3 up-to-date
+./gradlew build --continuous
 ```
 
 4、別のターミナルから再度コンテナ内に入りSpringを起動
 --------------------------
 1、コンテナ内に入る
 ```
-% docker compose exec app bash             
-root@569495f96ff8:/app# 
+docker compose exec app bash
 ```
 
 ２、Springを起動
 ```
-% docker compose exec app bash                       
-root@569495f96ff8:/app# ./gradlew bootRun
-
-Starting a Gradle Daemon, 1 busy Daemon could not be reused, use --status for details
+./gradlew bootRun
 ```
 
 ５、VSCodeのデバッグモードで起動
