@@ -8,7 +8,6 @@
 
  3. 下記の２つを検索してインストール
 
-
 - Extension Pack for Java
 - Spring Boot Extension Pack
 
