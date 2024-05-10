@@ -1,69 +1,59 @@
-環境構築手順
---------------------------
-1、 VSCodeに「Extension Pack for Java」と「Spring Boot Extension Pack」をインストール
---------------------------
+# 環境構築手順
 
- １、VSCodeを開く
- 
- ２、サイドバーの拡張機能アイコンをクリック
- 
- ３、下記の２つを検索してインストール
+## 1. VSCodeに「Extension Pack for Java」と「Spring Boot Extension Pack」をインストール
 
+ 1. VSCodeを開く
 
-・Extension Pack for Java
+ 2. サイドバーの拡張機能アイコンをクリック
 
-・Spring Boot Extension Pack
+ 3. 下記の２つを検索してインストール
 
-2、GitHubリポジトリからソースをクローンする
---------------------------
-下記がソースのURLになります。
+- Extension Pack for Java
+- Spring Boot Extension Pack
 
+## 2. GitHubリポジトリからソースをクローンする
+
+1. ソースコードを保存したいディレクトリをvscodeで開きます。
+
+2. 下記コマンドをvscodeのターミナルで実行し、自身のPCにインストールします。
+```
 git clone https://github.com/prum-jp/academy-springboot-base.git
-
-３、コンテナ上でビルドを実行
---------------------------
-
-１、まずはクローンしたフォルダに対して、ターミナル上で以下のコマンドを叩き、Javaコンテナを起動します。
-```
-% docker-compose up -d
-[+] Building 0.0s (0/0)                                                                                                                                        docker:desktop-linux
-[+] Running 3/3
- ✔ Network springboot-application_default  Created
- ✔ Container db                            Started　
- ✔ Container springboot-application-app-1  Started   
 ```
 
-２、コンテナを作成・起動したら、javaコンテナ内に入ります。
-```
-% docker compose exec app bash             
-root@569495f96ff8:/app# 
-```
-３、ビルドを実行する
-```
-root@569495f96ff8:/app# ./gradlew build --continuous
+## 3. コンテナ上でビルドを実行
 
-BUILD SUCCESSFUL in 42s
-6 actionable tasks: 3 executed, 3 up-to-date
+1. クローンしたフォルダをvscodeで開き、ターミナルで以下のコマンドを叩き、Javaコンテナを起動します。
+```
+docker-compose up -d
 ```
 
-4、別のターミナルから再度コンテナ内に入りSpringを起動
---------------------------
-1、コンテナ内に入る
+2. コンテナを作成・起動したら、javaコンテナ内に入ります。
 ```
-% docker compose exec app bash             
-root@569495f96ff8:/app# 
+docker compose exec app bash
+```
+※ターミナルに以下のような文字列が表示されれば成功です。
+
+`root@569495f96ff8:/app#`
+
+3. ビルドを実行する
+```
+./gradlew build --continuous
 ```
 
-２、Springを起動
-```
-% docker compose exec app bash                       
-root@569495f96ff8:/app# ./gradlew bootRun
+## 4. 別のターミナルから再度コンテナ内に入りSpringを起動
 
-Starting a Gradle Daemon, 1 busy Daemon could not be reused, use --status for details
+1. コンテナ内に入る
+```
+docker compose exec app bash
 ```
 
-５、VSCodeのデバッグモードで起動
---------------------------
+2. Springを起動
+```
+./gradlew bootRun
+```
+
+## 5. VSCodeのデバッグモードで起動
+
 最後にVSCodeのデバッグモードで起動します。
 
 VSCodeのデバッグビューを開いて、サイドバーの［実行とデバッグ］アイコンをクリックすると、「java（Attach）」と表示されているプルダウンがあります。
