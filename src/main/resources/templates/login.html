@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>login</title>
+        <link th:href="@{/css/style.css}" rel="stylesheet">
+    </head>
+    <body>
+
+        <header class="header">
+            <div class="logo">My Portfolio</div>
+            <a th:href="@{/signin}" class="header-btn">新規登録</a>
+        </header>
+
+        <main class="main-container">
+
+            <h1 class="page-title">ログイン</h1>
+
+            <form th:action="@{/login}" method="post">
+                
+                <div class="form-group">
+                    <label class="form-label">メールアドレス</label>
+                </div><input type="email" name="email" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">パスワード</label>
+                </div><input type="password" name="password" />
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="submit-btn">ログインする</button>
+                    <a th:href="@{/signin}" class="sub-btn">新規登録する</a>
+                </div>
+
+            </form>
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer-logo">portfolio site</div>
+        </footer>
+
+    </body>
+</html>
