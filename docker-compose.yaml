@@ -1,15 +1,16 @@
 services:
   app:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    image: spring-docker-app:latest
+    #build:
+      #context: ./
+      #dockerfile: Dockerfile
     working_dir: /app
     ports:
       - 8080:8080
       - 5050:5050
     tty: true
-    volumes:
-      - ./:/app
+    #volumes:
+    #- ./:/app
     depends_on:
       - db
 
